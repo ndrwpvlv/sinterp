@@ -2,7 +2,6 @@
 Simple fast linear interpolation for Python
 
 Simple benchmark for compare with Numpy:
-
 ```python
 from numpy import interp
 import random
@@ -44,7 +43,7 @@ for r, v in zip(size, ratios):
     print('    %i : %f' % (r, v))
 print('Check convergence. Difference between interp and interp1d = %f' % max(deltas))
 ```
-Results (at my laptop):
+Results Python 3.6 Win10 (at my laptop):
 ```
 --- Benchmark results ---
 List size : Ratio
@@ -54,4 +53,15 @@ List size : Ratio
     10000 : 51.568103
     100000 : 435.951735
 Check convergence. Delta between interp and interp1d = 0.000000
+```
+Results Python 3.7 Linux-Mint 19.3
+```
+--- Benchmark results ---
+List size : Ratio
+    10 : 2.323069
+    100 : 3.947551
+    1000 : 20.356282
+    10000 : 145.439532
+    100000 : 1165.967304
+Check convergence. Delta between interp and interp1d = 0.00000
 ```
