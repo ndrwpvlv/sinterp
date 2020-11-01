@@ -1,7 +1,7 @@
 # sinterp
 Simple fast linear interpolation for Python
 
-Simple benchmark:
+Simple benchmark for compare with Numpy:
 
 ```python
 from numpy import interp
