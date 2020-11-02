@@ -47,21 +47,21 @@ Results Python 3.6 Win10 (at my laptop):
 ```
 --- Benchmark results ---
 List size : Ratio
-    10 : 1.648235
-    100 : 2.002282
-    1000 : 8.362892
-    10000 : 51.568103
-    100000 : 435.951735
+    10 : 2.312361
+    100 : 1.810310
+    1000 : 7.835562
+    10000 : 54.542985
+    100000 : 514.559448
 Check convergence. Delta between interp and interp1d = 0.000000
 ```
 Results Python 3.7 Linux-Mint 19.3
 ```
 --- Benchmark results ---
 List size : Ratio
-    10 : 2.323069
-    100 : 3.947551
-    1000 : 20.356282
-    10000 : 145.439532
-    100000 : 1165.967304
-Check convergence. Delta between interp and interp1d = 0.00000
+    10 : 2.409009
+    100 : 3.836711
+    1000 : 19.986599
+    10000 : 141.633523
+    100000 : 1155.362543
+Check convergence. Delta between interp and interp1d = 0.000000
 ```
