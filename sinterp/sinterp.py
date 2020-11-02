@@ -1,10 +1,22 @@
 # -*- coding: utf-8 -*-
 
+from sinterp.config import ITERATION_SOLVER_SIZE_LIMIT
+
 
 def interp1d(x: float, xp: list, yp: list) -> float:
     check_input(x, xp, yp)
-    i1 = 0
-    i2 = len(xp) - 1
+    return interp1d_bisec(x, xp, yp) if len(xp) > ITERATION_SOLVER_SIZE_LIMIT else interp1d_iter(x, xp, yp)
+
+
+def interp1d_iter(x: float, xp: list, yp: list):
+    for ii in range(0, len(xp) - 1):
+        if xp[ii] < x < xp[ii + 1]:
+            return yp[ii] + ((x - xp[ii]) / (xp[ii + 1] - xp[ii])) * (yp[ii + 1] - yp[ii])
+    return ValueError('Solution is not find')
+
+
+def interp1d_bisec(x: float, xp: list, yp: list):
+    i1, i2 = [0, len(xp) - 1]
     while i2 - i1 > 1:
         _ = int((i2 + i1) / 2)
         if x == xp[i1]:
