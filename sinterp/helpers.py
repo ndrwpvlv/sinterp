@@ -2,7 +2,6 @@
 
 
 def bisec_find_range(k: float, kp: list):
-    check_list1d_range(k, kp)
     k1, k2 = [0, len(kp) - 1]
     while k2 - k1 > 1:
         _ = int((k2 + k1) / 2)
