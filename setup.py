@@ -7,14 +7,14 @@ with open('README.md', 'r') as fh:
 
 setup(
     name='sinterp',
-    version='0.1.0',
+    version='0.2.0',
     packages=['sinterp', ],
     url='https://github.com/ndrwpvlv/sinterp',
     license='MIT',
     author='Andrei S. Pavlov',
     author_email='ndrw.pvlv@gmail.com',
     description='Simple fast linear interpolation for Python',
-    download_url='https://github.com/ndrwpvlv/sinterp/archive/0.1.0.tar.gz',
+    download_url='https://github.com/ndrwpvlv/sinterp/archive/0.2.0.tar.gz',
     long_description=long_description,
     long_description_content_type='text/markdown',
     keywords=['interpolation', 'linear interpolation', ],
@@ -28,7 +28,7 @@ setup(
         'Operating System :: OS Independent',
         'License :: OSI Approved :: MIT License',
     ],
-    install_requires=['attrs==20.2.0', 'importlib-metadata==2.0.0', 'iniconfig==1.1.1', 'packaging==20.4',
-                      'pluggy==0.13.1', 'py==1.9.0', 'pyparsing==2.4.7', 'pytest==6.1.2', 'six==1.15.0',
-                      'toml==0.10.2', 'zipp==3.4.0', ],
+    install_requires=['attrs==21.2.0', 'importlib-metadata==4.5.0', 'iniconfig==1.1.1', 'packaging==20.9',
+                      'pluggy==0.13.1', 'py==1.10.0', 'pyparsing==2.4.7', 'pytest==6.2.4', 'toml==0.10.2',
+                      'typing-extensions==3.10.0.0', 'zipp==3.4.1', ],
 )

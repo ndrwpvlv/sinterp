@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 
-from .config import ITERATION_SOLVER_SIZE_LIMIT
+from .config import ITERATION_SOLVER_SIZE_LIMIT, CHECK_INPUT
 from .helpers import check_input1d, check_input2d, bisec_find_range
 
 
-def interp1d(x: float, xp: list, yp: list) -> float:
-    check_input1d(x, xp, yp)
+def interp1d(x: float, xp: list, yp: list, make_checks: bool = CHECK_INPUT) -> float:
+    if make_checks:
+        check_input1d(x, xp, yp)
     return interp1d_bisec(x, xp, yp) if len(xp) > ITERATION_SOLVER_SIZE_LIMIT else interp1d_iter(x, xp, yp)
 
 
@@ -21,12 +22,13 @@ def interp1d_bisec(x: float, xp: list, yp: list):
     return yp[i1] + ((x - xp[i1]) / (xp[i2] - xp[i1])) * (yp[i2] - yp[i1]) if i1 != i2 else yp[i1]
 
 
-def interp2d(x: float, y: float, xp: list, yp: list, zp: list):
+def interp2d(x: float, y: float, xp: list, yp: list, zp: list, make_checks: bool = CHECK_INPUT):
+    if make_checks:
+        check_input2d(x, y, xp, yp, zp)
     return interp2d_bisec(x, y, xp, yp, zp)
 
 
 def interp2d_bisec(x: float, y: float, xp: list, yp: list, zp: list):
-    check_input2d(x, y, xp, yp, zp)
     i1, i2 = bisec_find_range(x, xp)
     j1, j2 = bisec_find_range(y, yp)
     z_j1 = zp[j1][i1] + ((x - xp[i1]) / (xp[i2] - xp[i1])) * (zp[j1][i2] - zp[j1][i1]) if i1 != i2 else zp[j1][i1]
