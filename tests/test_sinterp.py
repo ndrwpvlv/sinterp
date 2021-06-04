@@ -1,6 +1,6 @@
 import pytest
 
-from sinterp.sinterp import interp1d
+from sinterp import interp1d
 
 
 def test_interp1d_1():
